@@ -38,11 +38,11 @@ export class RSI extends Indicator {
           } else {
             RS = lastAvgGain / lastAvgLoss;
             RS = isNaN(RS) ? 0 : RS;
-            currentRSI = `${parseFloat((100 - (100 / (1 + RS))).toFixed(2))} - ${values[count]}`;
+            currentRSI = parseFloat((100 - (100 / (1 + RS))).toFixed(2));
           }
         }
         count++;
-        current = yield currentRSI;
+        current = yield `currentRSI`;
       }
     })(period);
 
