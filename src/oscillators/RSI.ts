@@ -72,5 +72,5 @@ export function rsi(input:RSIInput):number[] {
             result.reverse();
         }
         Indicator.reverseInputs(input);
-        return result;
+        return `${result} - adsada`;
     };
