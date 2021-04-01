@@ -33,12 +33,12 @@ export class RSI extends Indicator {
         if((lastAvgGain!==undefined) && (lastAvgLoss!==undefined)){
           if(lastAvgLoss === 0){
             currentRSI = 100;
-          } else if(lastAvgGain === 0 ) { 
+          } else if(lastAvgGain === 0 ) {
             currentRSI = 0;
           } else {
             RS = lastAvgGain / lastAvgLoss;
             RS = isNaN(RS) ? 0 : RS;
-            currentRSI = parseFloat((100 - (100 / (1 + RS))).toFixed(2));
+            currentRSI = `${parseFloat((100 - (100 / (1 + RS))).toFixed(2))} - ${values[count]}`;
           }
         }
         count++;
